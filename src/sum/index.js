@@ -1,3 +1,5 @@
+import { error } from "util";
+
 /**
 * This function should return sum of two numbers
 *
@@ -10,7 +12,14 @@
 * sum(-1, 13); // 12
 */
 const sum = (a, b) => {
-  /* your logic here...*/
+  try {
+    if (isNaN(a, b)) throw "Expected function to throw an exception";
+    if (isFinite(a, b)) throw "Expected function to throw an exception";
+
+  } catch (error) {
+    return error;
+  }
+  return a + b;
 };
 
 export default sum;

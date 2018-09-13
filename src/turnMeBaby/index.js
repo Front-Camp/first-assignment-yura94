@@ -1,3 +1,5 @@
+import { isString } from "util";
+
 /**
  * This function should just reverse string
  *
@@ -8,7 +10,11 @@
  * turnMeBaby('Some text'); // 'txet emoS'
  */
 const turnMeBaby = str => {
-  /* your logic here...*/
+  if (isString(str)) {
+    return str.split("").reverse().join("");
+  } else {
+    return;
+  }
 };
 
 export default turnMeBaby;
